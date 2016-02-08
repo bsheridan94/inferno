@@ -1,0 +1,605 @@
+(cd lib9; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a utflen.o utfnlen.o utfrrune.o utfrune.o utfecpy.o vfprint.o vseprint.o vsmprint.o vsnprint.o dirstat-posix.o errstr-posix.o getuser-posix.o getcallerpc-Linux-386.o setfcr-Linux-386.o getwd-posix.o sbrk-posix.o isnan-posix.o
+(cd libbio; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a bseek.o bvprint.o bwrite.o
+(cd libmp; mk  install)
+(cd port; mk  SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmp.a mpdiv.o mpexp.o mpmod.o mpextendedgcd.o mpinvert.o mprand.o crt.o mptoi.o mptoui.o mptov.o mptouv.o
+(cd libsec; mk  install)
+(cd port; mk  SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libsec.a egverify.o dsagen.o dsaalloc.o dsaprivtopub.o dsasign.o dsaverify.o
+(cd libmath; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a s_ilogb.o s_log1p.o s_nextafter.o s_rint.o s_scalbn.o s_sin.o s_tan.o s_tanh.o
+(cd utils/iyacc; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -DPARSER="yaccpar" -DPARSERS="yaccpar" -o yacc.o yacc.c
+cc -m32  -o o.out yacc.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/iyacc && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/iyacc
+(cd limbo; mk  install)
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o asm.o asm.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o com.o com.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o decls.o decls.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o dis.o dis.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o dtocanon.o dtocanon.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o ecom.o ecom.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o gen.o gen.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o lex.o lex.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o nodes.o nodes.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o optab.o optab.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o optim.o optim.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o sbl.o sbl.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o stubs.o stubs.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o typecheck.o typecheck.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o types.o types.c
+cc -c -m32 -DINCPATH="/home/brian/project/CS370/inferno/module" -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o y.tab.o y.tab.c
+cc -m32  -o o.out asm.o com.o decls.o dis.o dtocanon.o ecom.o gen.o lex.o nodes.o optab.o optim.o sbl.o stubs.o typecheck.o types.o y.tab.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a /home/brian/project/CS370/inferno/Linux/386/lib/libsec.a /home/brian/project/CS370/inferno/Linux/386/lib/libmp.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/limbo && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/limbo
+(cd libinterp; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libinterp.a runt.o tk.o keyring.o
+(cd libkeyring; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libkeyring.a egalg.o rsaalg.o
+(cd libdraw; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libdraw.a stringwidth.o subfont.o subfontcache.o subfontname.o unloadimage.o window.o writecolmap.o writeimage.o writesubfont.o
+(cd libprefab; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libprefab.a compound.o element.o elistelement.o iconbox.o iconelement.o textbox.o textelement.o
+(cd libtk; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libtk.a tindx.o tmark.o ttags.o twind.o
+(cd libfreetype; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libfreetype.a pshinter.o pfr.o
+(cd libmemdraw; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmemdraw.a cload.o draw.o load.o unload.o
+(cd libmemlayer; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmemlayer.a ldelete.o lhide.o line.o load.o lorigin.o lsetrefresh.o ltofront.o ltorear.o unload.o lalloc.o
+(cd libdynld; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libdynld.a dynld-386.o dynloadfd.o dynld.o
+(cd asm; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o lex.o lex.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o assem.o assem.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o y.tab.o y.tab.c
+cc -m32  -o o.out lex.o assem.o y.tab.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/asm && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/asm
+(cd utils/data2c; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o data2c.o data2c.c
+cc -m32  -o o.out data2c.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/data2c && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/data2c
+(cd utils/ndate; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o ndate.o ndate.c
+cc -m32  -o o.out ndate.o /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ndate && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ndate
+(cd emu; mk  install)
+(cd Linux; mk  install)
+cc -c -m32  asm-386.S
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 os.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/kproc-pthreads.c
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 segflush-386.c
+/bin/sh ../port/mkroot emu
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/lock.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/ipif6-posix.c
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 cmd.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devmnt.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/win-x11a.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devdraw.c
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 devfs.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devdup.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devsnarf.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devcmd.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devprog.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devindir.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devmem.c
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 deveia.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devpointer.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devcap.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devssl.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devenv.c
+	sed 's/extern //;s,;.*/\* , = ",;s, \*/,";,' < ../port/error.h > errstr.h
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/srv.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devcons.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devip.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/ipaux.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devsrv.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devprof.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devpipe.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/uqid.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/latin1.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/dev.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/exportfs.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/qio.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/parse.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/main.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/error.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/dial.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/discall.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/cache.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/alloc.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/inferno.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/env.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/dis.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devtab.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/pgrp.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/errstr.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/chan.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/print.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/exception.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/sysfile.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/random.c
+	/bin/sh ../port/mkdevc emu > emu.c
+(cd /home/brian/project/CS370/inferno/libinterp ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libinterp.a runt.o tk.o keyring.o
+(cd /home/brian/project/CS370/inferno/libtk ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libtk.a tindx.o tmark.o ttags.o twind.o
+(cd /home/brian/project/CS370/inferno/libfreetype ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libfreetype.a pshinter.o pfr.o
+(cd /home/brian/project/CS370/inferno/libmath ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a s_ilogb.o s_log1p.o s_nextafter.o s_rint.o s_scalbn.o s_sin.o s_tan.o s_tanh.o
+(cd /home/brian/project/CS370/inferno/libdraw ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libdraw.a stringwidth.o subfont.o subfontcache.o subfontname.o unloadimage.o window.o writecolmap.o writeimage.o writesubfont.o
+(cd /home/brian/project/CS370/inferno/libmemlayer ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmemlayer.a ldelete.o lhide.o line.o load.o lorigin.o lsetrefresh.o ltofront.o ltorear.o unload.o lalloc.o
+(cd /home/brian/project/CS370/inferno/libmemdraw ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmemdraw.a cload.o draw.o load.o unload.o
+(cd /home/brian/project/CS370/inferno/libkeyring ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libkeyring.a egalg.o rsaalg.o
+(cd /home/brian/project/CS370/inferno/libsec ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+(cd port; mk  SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libsec.a egverify.o dsagen.o dsaalloc.o dsaprivtopub.o dsasign.o dsaverify.o
+(cd /home/brian/project/CS370/inferno/libmp ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+(cd port; mk  SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmp.a mpdiv.o mpexp.o mpmod.o mpextendedgcd.o mpinvert.o mprand.o crt.o mptoi.o mptoui.o mptov.o mptouv.o
+(cd /home/brian/project/CS370/inferno/lib9 ; mk SHELLTYPE=sh SYSTARG=Linux OBJTYPE=386 install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a utflen.o utfnlen.o utfrrune.o utfrune.o utfecpy.o vfprint.o vseprint.o vsmprint.o vsnprint.o dirstat-posix.o errstr-posix.o getuser-posix.o getcallerpc-Linux-386.o setfcr-Linux-386.o getwd-posix.o sbrk-posix.o isnan-posix.o
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 emu.root.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/devroot.c
+	cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. ../port/proc.c
+cc -c -m32 -DROOT="/home/brian/project/CS370/inferno" -DEMU -I. -I../port -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -I/home/brian/project/CS370/inferno/libinterp -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 '-DKERNDATE='1453871421 emu.c
+cc -m32  -o o.emu asm-386.o os.o kproc-pthreads.o segflush-386.o emu.root.o lock.o ipif6-posix.o cmd.o devmnt.o win-x11a.o devdraw.o devfs.o devdup.o devsnarf.o devcmd.o devprog.o devindir.o devmem.o deveia.o devpointer.o devcap.o devssl.o devenv.o devroot.o srv.o devcons.o devip.o ipaux.o devsrv.o devprof.o devpipe.o uqid.o latin1.o dev.o proc.o exportfs.o qio.o parse.o main.o error.o dial.o discall.o cache.o alloc.o inferno.o env.o dis.o devtab.o pgrp.o errstr.o chan.o print.o exception.o sysfile.o random.o emu.o /home/brian/project/CS370/inferno/Linux/386/lib/libinterp.a /home/brian/project/CS370/inferno/Linux/386/lib/libtk.a /home/brian/project/CS370/inferno/Linux/386/lib/libfreetype.a /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a /home/brian/project/CS370/inferno/Linux/386/lib/libdraw.a /home/brian/project/CS370/inferno/Linux/386/lib/libmemlayer.a /home/brian/project/CS370/inferno/Linux/386/lib/libmemdraw.a /home/brian/project/CS370/inferno/Linux/386/lib/libkeyring.a /home/brian/project/CS370/inferno/Linux/386/lib/libsec.a /home/brian/project/CS370/inferno/Linux/386/lib/libmp.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a -lX11 -lXext -lm -lpthread
+cp o.emu /home/brian/project/CS370/inferno/Linux/386/bin/emu
+(cd appl; mk  install)
+(cd acme; mk  install)
+(cd acme; mk  install)
+(cd acid; mk  install)
+(cd src; mk  install)
+mk: 'install' is up to date
+(cd bin; mk  install)
+(cd src; mk  install)
+mk: 'install' is up to date
+(cd edit; mk  install)
+(cd src; mk  install)
+mk: 'install' is up to date
+(cd mail; mk  install)
+(cd src; mk  install)
+mk: 'install' is up to date
+(cd charon; mk  install)
+mk: 'install' is up to date
+(cd cmd; mk  install)
+limbo -I/home/brian/project/CS370/inferno/module -gw auplay.b
+(cd auth; mk  install)
+(cd factotum; mk  install)
+(cd proto; mk  install)
+mk: 'install' is up to date
+(cd auxi; mk  install)
+mk: 'install' is up to date
+(cd avr; mk  install)
+mk: 'install' is up to date
+(cd disk; mk  install)
+(cd prep; mk  install)
+mk: 'install' is up to date
+(cd fs; mk  install)
+mk: 'install' is up to date
+(cd install; mk  install)
+mk: 'install' is up to date
+(cd ip; mk  install)
+(cd ppp; mk  install)
+mk: 'install' is up to date
+(cd lego; mk  install)
+mk: 'install' is up to date
+(cd limbo; mk  install)
+mk: 'install' is up to date
+(cd mash; mk  install)
+mk: 'install' is up to date
+(cd mk; mk  install)
+mk: 'install' is up to date
+(cd mpc; mk  install)
+mk: 'install' is up to date
+(cd ndb; mk  install)
+mk: 'install' is up to date
+(cd sh; mk  install)
+cp /home/brian/project/CS370/inferno/dis/sh/sh.dis /home/brian/project/CS370/inferno/dis/sh/..
+(cd spki; mk  install)
+mk: 'install' is up to date
+(cd usb; mk  install)
+mk: 'install' is up to date
+rm -f auhdr.dis && cp auplay.dis auhdr.dis
+rm -f /home/brian/project/CS370/inferno/dis/auhdr.dis && cp auhdr.dis /home/brian/project/CS370/inferno/dis/auhdr.dis
+(cd collab; mk  install)
+mk: 'install' is up to date
+(cd demo; mk  install)
+(cd camera; mk  install)
+mk: 'install' is up to date
+(cd chat; mk  install)
+mk: 'install' is up to date
+(cd cpupool; mk  install)
+mk: 'install' is up to date
+(cd lego; mk  install)
+mk: 'install' is up to date
+(cd ns; mk  install)
+mk: 'install' is up to date
+(cd odbc; mk  install)
+mk: 'install' is up to date
+(cd spree; mk  install)
+mk: 'install' is up to date
+(cd whiteboard; mk  install)
+mk: 'install' is up to date
+(cd ebook; mk  install)
+mk: 'install' is up to date
+(cd grid; mk  install)
+(cd demo; mk  install)
+mk: 'install' is up to date
+(cd lib; mk  install)
+mk: 'install' is up to date
+(cd lib; mk  install)
+(cd convcs; mk  install)
+mk: 'install' is up to date
+(cd crypt; mk  install)
+mk: 'install' is up to date
+(cd ecmascript; mk  install)
+mk: 'install' is up to date
+(cd encoding; mk  install)
+mk: 'install' is up to date
+(cd ida; mk  install)
+mk: 'install' is up to date
+(cd print; mk  install)
+mk: 'install' is up to date
+(cd spki; mk  install)
+mk: 'install' is up to date
+(cd strokes; mk  install)
+mk: 'install' is up to date
+(cd styxconv; mk  install)
+mk: 'install' is up to date
+(cd usb; mk  install)
+mk: 'install' is up to date
+(cd w3c; mk  install)
+mk: 'install' is up to date
+(cd math; mk  install)
+mk: 'install' is up to date
+(cd spree; mk  install)
+mk: 'install' is up to date
+(cd svc; mk  install)
+(cd httpd; mk  install)
+for i in httpd.debug httpd.log httpd.rewrite httpd.suff
+do
+	rm -f /home/brian/project/CS370/inferno/services/httpd/$i && cp $i /home/brian/project/CS370/inferno/services/httpd/$i
+done
+# chmod 644 /home/brian/project/CS370/inferno/services/httpd/httpd.log
+(cd webget; mk  install)
+rm -f /home/brian/project/CS370/inferno/services/webget/webget.log && cp webget.log /home/brian/project/CS370/inferno/services/webget/webget.log
+# chmod 644 /home/brian/project/CS370/inferno/services/webget/webget.log
+(cd tiny; mk  install)
+mk: 'install' is up to date
+(cd wm; mk  install)
+(cd brutus; mk  install)
+mk: 'install' is up to date
+(cd drawmux; mk  install)
+mk: 'install' is up to date
+(cd ftree; mk  install)
+mk: 'install' is up to date
+(cd mpeg; mk  install)
+mk: 'install' is up to date
+(cd utils; mk  install)
+(cd libmach; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a obj.o map.o swap.o sym.o access.o machdata.o setmach.o executable.o vcodas.o
+(cd libregexp; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libregexp.a regcomp.o regerror.o regexec.o regsub.o regaux.o rregexec.o rregsub.o
+(cd iyacc; mk  install)
+cc -m32  -o o.out yacc.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/iyacc && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/iyacc
+(cd iar; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o ar.o ar.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o Posix.o Posix.c
+cc -m32  -o o.out ar.o Posix.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/iar && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/iar
+(cd cc; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a acid.o bits.o
+(cd 5coff; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o 5coff.o 5coff.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o coff.o coff.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o auxi.o auxi.c
+cc -m32  -o o.out 5coff.o coff.o auxi.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/5coff && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/5coff
+(cd 5cv; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o 5cv.o 5cv.c
+cc -m32  -o o.out 5cv.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/5cv && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/5cv
+(cd sqz; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o sqz.o sqz.c
+cc -m32  -o o.out sqz.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/sqz && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/sqz
+(cd acid; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o main.o main.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o lex.o lex.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o util.o util.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o exec.o exec.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o expr.o expr.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o builtin.o builtin.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o proc.o proc.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o dot.o dot.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o print.o print.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o os-Posix.o os-Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I../include -o rdebug.o rdebug.c
+cc -m32  -o o.out main.o y.tab.o lex.o util.o exec.o expr.o list.o builtin.o proc.o dot.o print.o os-Posix.o rdebug.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/libregexp.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/acid && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/acid
+(cd srclist; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o srclist.o srclist.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o Posix.o Posix.c
+cc -m32  -o o.out srclist.o Posix.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/srclist && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/srclist
+(cd ftl; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o ftl.o ftl.c
+cc -m32  -o o.out ftl.o /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ftl && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ftl
+(cd ms2; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o ms2.o ms2.c
+cc -m32  -o o.out ms2.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ms2 && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ms2
+(cd data2c; mk  install)
+cc -m32  -o o.out data2c.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/data2c && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/data2c
+(cd data2s; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o data2s.o data2s.c
+cc -m32  -o o.out data2s.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/data2s && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/data2s
+(cd idea; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o idea.o idea.c
+cc -m32  -o o.out idea.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/idea && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/idea
+(cd kprof; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o kprof.o kprof.c
+cc -m32  -o o.out kprof.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/kprof && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/kprof
+(cd c2l; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o acid.o acid.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o bits.o bits.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o com.o com.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o com64.o com64.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o Posix.o Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o dcl.o dcl.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o dpchk.o dpchk.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include '-DCPP="/bin/cpp"' lex.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mac.o mac.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mpatof.o mpatof.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o out.o out.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o scon.o scon.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o sub.o sub.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o c2l.o c2l.c
+cc -m32  -o o.out acid.o bits.o com.o com64.o Posix.o dcl.o dpchk.o lex.o mac.o mpatof.o out.o scon.o sub.o y.tab.o c2l.o /home/brian/project/CS370/inferno/Linux/386/lib/libmath.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/c2l && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/c2l
+(cd mkppcimage; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mkppcimage.o mkppcimage.c
+cc -m32  -o o.out mkppcimage.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/mkppcimage && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/mkppcimage
+(cd nm; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I. -I../include -o nm.o nm.c
+cc -m32  -o o.out nm.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/inm && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/inm
+(cd 5a; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o lex.o lex.c
+cc -m32  -o o.out y.tab.o lex.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/5a && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/5a
+(cd 5c; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o cgen.o cgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o enam.o enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o mul.o mul.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o peep.o peep.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 ../cc/pgen.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 ../cc/pswt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o reg.o reg.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o sgen.o sgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o swt.o swt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o txt.o txt.c
+cc -m32  -o o.out cgen.o enam.o list.o mul.o peep.o pgen.o pswt.o reg.o sgen.o swt.o txt.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/5c && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/5c
+(cd 5l; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asm.o asm.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o noop.o noop.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o obj.o obj.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o optab.o optab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o pass.o pass.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o span.o span.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../5c/enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/elf.c
+cc -m32  -o o.out asm.o list.o noop.o obj.o optab.o pass.o span.o enam.o Posix.o elf.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/5l && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/5l
+(cd 8a; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o lex.o lex.c
+cc -m32  -o o.out y.tab.o lex.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/8a && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/8a
+(cd 8c; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o cgen.o cgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o enam.o enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o sgen.o sgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o swt.o swt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o txt.o txt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o reg.o reg.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o peep.o peep.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pgen.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pswt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o machcap.o machcap.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o cgen64.o cgen64.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o div.o div.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mul.o mul.c
+cc -m32  -o o.out cgen.o enam.o list.o sgen.o swt.o txt.o reg.o peep.o pgen.o pswt.o machcap.o cgen64.o div.o mul.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/8c && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/8c
+(cd 8l; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asm.o asm.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o obj.o obj.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o optab.o optab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o pass.o pass.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o span.o span.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../8c/enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/elf.c
+cc -m32  -o o.out asm.o obj.o optab.o pass.o span.o list.o enam.o Posix.o elf.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/8l && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/8l
+(cd qa; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o lex.o lex.c
+cc -m32  -o o.out y.tab.o lex.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/qa && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/qa
+(cd qc; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o cgen.o cgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o enam.o enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o machcap.o machcap.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o mul.o mul.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o peep.o peep.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 ../cc/pgen.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 ../cc/pswt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o reg.o reg.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o sgen.o sgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o swt.o swt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o txt.o txt.c
+cc -m32  -o o.out cgen.o enam.o list.o machcap.o mul.o peep.o pgen.o pswt.o reg.o sgen.o swt.o txt.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/qc && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/qc
+(cd ql; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asm.o asm.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asmout.o asmout.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o noop.o noop.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o obj.o obj.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o optab.o optab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o pass.o pass.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o span.o span.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../qc/enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o cnam.o cnam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o sched.o sched.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/elf.c
+#cnam.c:	l.h
+#	rc mkcname
+cc -m32  -o o.out asm.o asmout.o list.o noop.o obj.o optab.o pass.o span.o enam.o cnam.o sched.o Posix.o elf.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ql && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ql
+(cd va; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o lex.o lex.c
+cc -m32  -o o.out y.tab.o lex.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/va && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/va
+(cd vc; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o cgen.o cgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o enam.o enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o peep.o peep.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pgen.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pswt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o reg.o reg.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o sgen.o sgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o swt.o swt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o txt.o txt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mul.o mul.c
+cc -m32  -o o.out cgen.o enam.o list.o peep.o pgen.o pswt.o reg.o sgen.o swt.o txt.o mul.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/vc && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/vc
+(cd vl; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asm.o asm.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o noop.o noop.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o sched.o sched.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o obj.o obj.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o optab.o optab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o pass.o pass.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o span.o span.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../vc/enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/elf.c
+cc -m32  -o o.out asm.o list.o noop.o sched.o obj.o optab.o pass.o span.o enam.o Posix.o elf.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/vl && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/vl
+(cd ka; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o y.tab.o y.tab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o lex.o lex.c
+cc -m32  -o o.out y.tab.o lex.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ka && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ka
+(cd kc; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o peep.o peep.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pgen.c
+cc -c -m32 -I. -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include ../cc/pswt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o reg.o reg.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o cgen.o cgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o enam.o enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o sgen.o sgen.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o swt.o swt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o txt.o txt.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o mul.o mul.c
+cc -m32  -o o.out peep.o pgen.o pswt.o reg.o cgen.o enam.o list.o sgen.o swt.o txt.o mul.o /home/brian/project/CS370/inferno/Linux/386/lib/libcc.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/kc && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/kc
+(cd kl; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o asm.o asm.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o list.o list.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o noop.o noop.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o sched.o sched.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o obj.o obj.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o optab.o optab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o pass.o pass.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. -o span.o span.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../kc/enam.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -I. ../ld/Posix.c
+cc -m32  -o o.out asm.o list.o noop.o sched.o obj.o optab.o pass.o span.o enam.o Posix.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/kl && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/kl
+(cd mk; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o arc.o arc.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o archive.o archive.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o bufblock.o bufblock.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o env.o env.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o file.o file.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o graph.o graph.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o job.o job.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o lex.o lex.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o main.o main.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o match.o match.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o mk.o mk.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o parse.o parse.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o Posix.o Posix.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o recipe.o recipe.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o rule.o rule.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o run.o run.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o sh.o sh.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o shprint.o shprint.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o symtab.o symtab.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o var.o var.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o varsub.o varsub.c
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -DROOT="/home/brian/project/CS370/inferno" -o word.o word.c
+cc -m32  -o o.out arc.o archive.o bufblock.o env.o file.o graph.o job.o lex.o main.o match.o mk.o parse.o Posix.o recipe.o rule.o run.o sh.o shprint.o symtab.o var.o varsub.o word.o /home/brian/project/CS370/inferno/Linux/386/lib/libregexp.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+test -x /home/brian/project/CS370/inferno/Linux/386/bin/mk && mv /home/brian/project/CS370/inferno/Linux/386/bin/mk /home/brian/project/CS370/inferno/Linux/386/bin/mk.save		#because we are executing it
+cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/mk
+(cd ksize; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o ksize.o ksize.c
+cc -m32  -o o.out ksize.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ksize && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ksize
+(cd kstrip; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../include -o kstrip.o kstrip.c
+cc -m32  -o o.out kstrip.o /home/brian/project/CS370/inferno/Linux/386/lib/libmach.a /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/kstrip && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/kstrip
+(cd md5sum; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o md5sum.o md5sum.c
+cc -m32  -o o.out md5sum.o /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a /home/brian/project/CS370/inferno/Linux/386/lib/libsec.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/md5sum && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/md5sum
+(cd mkext; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -o mkext.o mkext.c
+cc -m32  -o o.out mkext.o /home/brian/project/CS370/inferno/Linux/386/lib/libbio.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/mkext && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/mkext
+(cd ndate; mk  install)
+cc -m32  -o o.out ndate.o /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/ndate && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/ndate
+(cd tools; mk  install)
+(cd libstyx; mk  install)
+ar ruvs /home/brian/project/CS370/inferno/Linux/386/lib/libstyx.a styxserver.o Posix.o
+(cd styxtest; mk  install)
+cc -c -m32 -g -O -Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit -I/home/brian/project/CS370/inferno/Linux/386/include -I/home/brian/project/CS370/inferno/include -DLINUX_386 -I../libstyx -o styxtest.o styxtest.c
+cc -m32  -o o.out styxtest.o /home/brian/project/CS370/inferno/Linux/386/lib/libstyx.a /home/brian/project/CS370/inferno/Linux/386/lib/lib9.a 
+rm -f /home/brian/project/CS370/inferno/Linux/386/bin/styxtest && cp o.out /home/brian/project/CS370/inferno/Linux/386/bin/styxtest
